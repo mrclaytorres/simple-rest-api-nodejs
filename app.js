@@ -3,12 +3,14 @@ const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 
+//Prevent Deprecation warning
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true)
+
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
-mongoose.connect(
-  process.env.MONGO_ATLASS_CLUSTER + process.env.MONGO_ATLAS_PW + MONGO_ATLAS_DBNAME
-);
+mongoose.connect(process.env.MONGO_ATLASS_CLUSTER + process.env.MONGO_ATLAS_PW + process.env.MONGO_ATLAS_DBNAME);
 
 //Use for activity logging
 app.use(morgan("dev"));
