@@ -1,7 +1,0 @@
-{
-    "env": {
-        "MONGO_ATLASS_CLUSTER": "mongodb+srv://claytorres:",
-        "MONGO_ATLAS_PW": "!Darkside101",
-        "MONGO_ATLAS_DBNAME": "@cluster0.8sow2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    }
-}
