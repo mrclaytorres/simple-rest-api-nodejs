@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const productRoutes = require("./api/routes/products");
@@ -10,23 +9,20 @@ const orderRoutes = require("./api/routes/orders");
 mongoose.connect(
   'mongodb+srv://claytorres:' +
     process.env.MONGO_ATLAS_PW +
-    '@cluster0.8sow2.mongodb.net/simpleshop?retryWrites=true&w=majority',
-    {
-        useMongoClient: true
-    }
+    '@cluster0.8sow2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 );
 
 //Use for activity logging
 app.use(morgan("dev"));
 
 //Parse body request so it is readable
-app.use(bodyParser.urlencoded({ extend: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //CORS error-handling
 app.use((req, res, next) => {
-  req.header("Access-Control-Allow-Origin", "*");
-  req.header(
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
