@@ -10,7 +10,7 @@ mongoose.set('useUnifiedTopology', true)
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
-mongoose.connect(process.env.MONGO_ATLASS_CLUSTER + process.env.MONGO_ATLAS_PW + process.env.MONGO_ATLAS_DBNAME);
+mongoose.connect("mongodb+srv://claytorres:" + process.env.MONGO_ATLAS_PW + "@cluster0.8sow2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
 //Use for activity logging
 app.use(morgan("dev"));
