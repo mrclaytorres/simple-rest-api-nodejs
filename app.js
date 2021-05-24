@@ -17,6 +17,7 @@ app.use(morgan("dev"));
 
 //Parse body request so it is readable
 app.use(express.json());
+app.use(express.static('uploads'));
 app.use(express.urlencoded({ extended: false }));
 
 //CORS error-handling
