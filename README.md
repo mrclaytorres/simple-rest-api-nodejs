@@ -10,8 +10,8 @@ npm install
 ```
 {
     "env": {
-        "YOUR_MONGO_VARIABLE_NAME": "your_mongo_db_password",
-        "YOU_JWT_VARIABLE_NAME": "your_sever_secret_key"
+        "MONGO_ATLAS_PW": "your_mongo_db_password",
+        "JWT_KEY": "your_sever_secret_key"
     }
 }
 ```

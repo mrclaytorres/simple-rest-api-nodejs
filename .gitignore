@@ -106,5 +106,5 @@ dist
 # Nodemon Environment variables
 nodemon.json
 
-# Nodemon Environment variables
+# Media files directory
 uploads/

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const checkAuth = require('./api/middleware/check-auth');
 
 //Prevent Deprecation warning
 mongoose.set('useNewUrlParser', true);
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
 
 //Routes which should handle requests
 app.use("/products", productRoutes);
-app.use("/orders", orderRoutes);
+app.use("/orders", checkAuth, orderRoutes);
 app.use("/users", userRoutes);
 
 //Error handling
