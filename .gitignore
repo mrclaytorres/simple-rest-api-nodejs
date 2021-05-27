@@ -105,3 +105,6 @@ dist
 
 # Nodemon Environment variables
 nodemon.json
+
+# Nodemon Environment variables
+uploads/
